@@ -10,21 +10,29 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+import org.elasticsearch.common.settings.Settings;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
+import org.springframework.beans.factory.annotation.Value;
 import javax.annotation.Resource;
 
 @Configuration
 @PropertySource(value = "classpath:elasticsearch.properties")
 @EnableElasticsearchRepositories(basePackages = "it.sella.compain.repository")
 public class ElasticSearchConfiguration {
+    @Value("${elasticsearch.clustername}")
+    private String EsClusterName;
+    
     @Resource
     private Environment environment;
     @Bean
     public Client client() throws  UnknownHostException {
-        TransportClient client = TransportClient.builder().build();
+    	Settings esSettings = Settings.settingsBuilder()
+                .put("cluster.name", EsClusterName)
+                .build();
+      TransportClient client = TransportClient.builder().settings(esSettings).build();
+    	//TransportClient client = new TransportClient();
         TransportAddress address = new InetSocketTransportAddress(InetAddress.getByName(environment.getProperty("elasticsearch.host")), Integer.parseInt(environment.getProperty("elasticsearch.port")));
         client.addTransportAddress(address);
         return client;

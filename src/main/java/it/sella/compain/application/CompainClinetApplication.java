@@ -11,7 +11,6 @@ import it.sella.compain.configuration.ElasticSearchConfiguration;
 @SpringBootApplication
 @Configuration
 @ComponentScan(basePackages = "it.sella.compain")
-@EnableAutoConfiguration(exclude = {ElasticSearchConfiguration.class})
 public class CompainClinetApplication {
 
 	public static void main(String[] args) {

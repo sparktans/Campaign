@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
-@Document(indexName = "campaign", type = "campaignenties", shards = 1, replicas = 0)
+@Document(indexName = "campaign", type = "campaignentity", shards = 1, replicas = 0)
 public class Campaign {
 	@Id
 	private String id;
 	private String description;
+	private String name;
 	private String priority;
 	private String startDate;
 	private String endDate;
@@ -56,9 +57,11 @@ public class Campaign {
 	public void setGroup(List<String> group) {
 		this.group = group;
 	}
-	
-	
-	
-	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 }
