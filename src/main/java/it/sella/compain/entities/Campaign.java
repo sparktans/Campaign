@@ -7,7 +7,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Document(indexName = "campaign", type = "campaignentity", shards = 1, replicas = 0)
 public class Campaign {
 	@Id
-	private String id;
+	private Integer id;
 	private String description;
 	private String name;
 	private String priority;
@@ -15,10 +15,10 @@ public class Campaign {
 	private String endDate;
 	private List<String> stream;
 	private List<String> group;
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getDescription() {

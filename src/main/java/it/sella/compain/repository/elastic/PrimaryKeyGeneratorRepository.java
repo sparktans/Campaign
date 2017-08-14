@@ -1,4 +1,4 @@
-package it.sella.compain.repository;
+package it.sella.compain.repository.elastic;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 

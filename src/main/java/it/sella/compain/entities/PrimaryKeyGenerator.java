@@ -1,26 +1,26 @@
 package it.sella.compain.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+@Document(indexName = "campaign", type = "PrimaryKeyGenerator", shards = 1, replicas = 0)
 public class PrimaryKeyGenerator {
 
-	private String id;
+	@Id
 	private String entityName;
-	private String sequence;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	private Integer sequence;
+	
+	
 	public String getEntityName() {
 		return entityName;
 	}
 	public void setEntityName(String entityName) {
 		this.entityName = entityName;
 	}
-	public String getSequence() {
+	public Integer getSequence() {
 		return sequence;
 	}
-	public void setSequence(String sequence) {
+	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
 	}
 	

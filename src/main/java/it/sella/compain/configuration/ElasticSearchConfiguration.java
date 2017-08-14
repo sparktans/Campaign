@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 
 @Configuration
 @PropertySource(value = "classpath:elasticsearch.properties")
-@EnableElasticsearchRepositories(basePackages = "it.sella.compain.repository")
+@EnableElasticsearchRepositories(basePackages = "it.sella.compain.repository.elastic")
 public class ElasticSearchConfiguration {
     @Value("${elasticsearch.clustername}")
     private String EsClusterName;
