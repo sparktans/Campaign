@@ -18,14 +18,14 @@ import javax.annotation.Resource;
 @PropertySource(value = "classpath:elasticsearch.properties")
 public class ElasticSearchConfiguration {
     @Value("${elasticsearch.clustername}")
-    private String EsClusterName;
+    private String esClusterName;
     
     @Resource
     private Environment environment;
     @Bean
     public Client client() throws  UnknownHostException {
     	Settings esSettings = Settings.settingsBuilder()
-                .put("cluster.name", EsClusterName)
+                .put("cluster.name", esClusterName)
                 .build();
       TransportClient client = TransportClient.builder().settings(esSettings).build();
          TransportAddress address = new InetSocketTransportAddress(InetAddress.getByName(environment.getProperty("elasticsearch.host")), Integer.parseInt(environment.getProperty("elasticsearch.port")));

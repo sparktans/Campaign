@@ -4,7 +4,7 @@ package it.sella.campaign.entities;
 public class PrimaryKeyGenerator {
 
 	private String entityName;
-	private Integer sequence;
+	private Long sequence;
 	
 	
 	public String getEntityName() {
@@ -13,10 +13,10 @@ public class PrimaryKeyGenerator {
 	public void setEntityName(String entityName) {
 		this.entityName = entityName;
 	}
-	public Integer getSequence() {
+	public Long getSequence() {
 		return sequence;
 	}
-	public void setSequence(Integer sequence) {
+	public void setSequence(Long sequence) {
 		this.sequence = sequence;
 	}
 	

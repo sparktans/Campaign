@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -17,6 +19,9 @@ import it.sella.campaign.repository.redis.IRedisCacheRepository;
 
 @Component
 public class CampaignService implements ICampaignService{
+	
+	 private final Logger slf4jLogger = LoggerFactory.getLogger(CampaignService.class);
+	 
 @Autowired
 private ICampaignRepository campaignRepository;
 
@@ -32,7 +37,7 @@ public Campaign saveCampaign(Campaign campaign) {
 	if(generator == null) {
 		generator = new PrimaryKeyGenerator();
 		generator.setEntityName("CampaignEntity");
-		generator.setSequence(1);
+		generator.setSequence(1l);
 	} else {
 		generator.setSequence(generator.getSequence()+1);
 	}
@@ -44,9 +49,9 @@ public Campaign saveCampaign(Campaign campaign) {
 	return campaign;
 }
 
-public Campaign getCampaignByName(Integer key) {
+public Campaign getCampaignByName(Long key) {
 	Campaign campaign =cacheRepository.getCache(key);
-	System.out.println("camp search >>>>>>>>"+campaign.getDescription());
+	slf4jLogger.debug("campaign :",campaign.getStream());
 	return campaign;
 }
 
@@ -65,7 +70,8 @@ public void addAndSearchCampaign() {
 	listStream.add("Java enterprice");
 	camp.setStream(listStream);
 	saveCampaign(camp);
-	System.out.println("Save camp done >>>>>>>>"+camp);
+	slf4jLogger.debug("Saved Camp :"+camp);
+	slf4jLogger.debug("getAllCampaign :"+getAllCampaign().size());
 //	Campaign camp1=repository.findByName("test");
 	//getCampaignByName(camp.getId());
 //	System.out.println("camp search >>>>>>>>"+camp1);
@@ -77,9 +83,8 @@ public void addAndSearchCampaign() {
 	}
 
 @Override
-public Campaign modifyCampaign(Campaign campaign) {
-	// TODO Auto-generated method stub
-	return null;
+public void modifyCampaign(Campaign campaign) {
+	 campaignRepository.update(campaign.getId() == null ? "" :String.valueOf(campaign.getId()) , campaign);
 }
 
 

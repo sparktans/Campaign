@@ -1,0 +1,96 @@
+2017-08-18 08:08:03.481  INFO 10108 --- [main] i.s.c.a.CompaignClinetApplication        : Starting CompaignClinetApplication on user with PID 10108 (D:\springsuit\CompainClinet\target\classes started by lenovo in D:\springsuit\CompainClinet)
+2017-08-18 08:08:03.485 DEBUG 10108 --- [main] i.s.c.a.CompaignClinetApplication        : Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2017-08-18 08:08:03.486  INFO 10108 --- [main] i.s.c.a.CompaignClinetApplication        : No active profile set, falling back to default profiles: default
+2017-08-18 08:08:03.535  INFO 10108 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:08:03 IST 2017]; root of context hierarchy
+2017-08-18 08:08:04.113  INFO 10108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-08-18 08:08:04.716  INFO 10108 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-08-18 08:08:04.724  INFO 10108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-18 08:08:04.725  INFO 10108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-08-18 08:08:04.819  INFO 10108 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-18 08:08:04.954  INFO 10108 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-18 08:08:04.958  INFO 10108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-18 08:08:04.959  INFO 10108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-18 08:08:04.959  INFO 10108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-18 08:08:04.959  INFO 10108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-18 08:08:05.102  INFO 10108 --- [main] org.elasticsearch.plugins                : [Kohl Harder Boulder Man] modules [], plugins [], sites []
+2017-08-18 08:08:06.083 DEBUG 10108 --- [main] i.s.campaign.service.CampaignService     : campaign :
+2017-08-18 08:08:06.084 DEBUG 10108 --- [main] i.s.campaign.service.CampaignService     : Saved Camp :
+2017-08-18 08:08:06.202 DEBUG 10108 --- [main] i.s.campaign.service.CampaignService     : getAllCampaign :
+2017-08-18 08:08:06.810  INFO 10108 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-18 08:08:06.850  INFO 10108 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-08-18 08:08:06.854  INFO 10108 --- [main] i.s.c.a.CompaignClinetApplication        : Started CompaignClinetApplication in 3.598 seconds (JVM running for 4.151)
+2017-08-18 08:08:28.542  INFO 10108 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-08-18 08:08:28.542  INFO 10108 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:08:03 IST 2017]; root of context hierarchy
+2017-08-18 08:08:28.544  INFO 10108 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-08-18 08:09:08.752  INFO 3436 --- [main] i.s.c.a.CompaignClinetApplication        : Starting CompaignClinetApplication on user with PID 3436 (D:\springsuit\CompainClinet\target\classes started by lenovo in D:\springsuit\CompainClinet)
+2017-08-18 08:09:08.755 DEBUG 3436 --- [main] i.s.c.a.CompaignClinetApplication        : Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2017-08-18 08:09:08.756  INFO 3436 --- [main] i.s.c.a.CompaignClinetApplication        : No active profile set, falling back to default profiles: default
+2017-08-18 08:09:08.879  INFO 3436 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:09:08 IST 2017]; root of context hierarchy
+2017-08-18 08:09:09.540  INFO 3436 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-08-18 08:09:10.178  INFO 3436 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-08-18 08:09:10.187  INFO 3436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-18 08:09:10.188  INFO 3436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-08-18 08:09:10.305  INFO 3436 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-18 08:09:10.464  INFO 3436 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-18 08:09:10.468  INFO 3436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-18 08:09:10.468  INFO 3436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-18 08:09:10.468  INFO 3436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-18 08:09:10.468  INFO 3436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-18 08:09:10.600  INFO 3436 --- [main] org.elasticsearch.plugins                : [Alpha the Ultimate Mutant] modules [], plugins [], sites []
+2017-08-18 08:09:11.615 DEBUG 3436 --- [main] i.s.campaign.service.CampaignService     : campaign :
+2017-08-18 08:09:11.616 DEBUG 3436 --- [main] i.s.campaign.service.CampaignService     : Saved Camp :it.sella.campaign.entities.Campaign@2241f05b
+2017-08-18 08:09:11.709 DEBUG 3436 --- [main] i.s.campaign.service.CampaignService     : getAllCampaign :3
+2017-08-18 08:09:12.323  INFO 3436 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-18 08:09:12.364  INFO 3436 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-08-18 08:09:12.368  INFO 3436 --- [main] i.s.c.a.CompaignClinetApplication        : Started CompaignClinetApplication in 3.916 seconds (JVM running for 4.717)
+2017-08-18 08:10:38.411  INFO 3436 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-08-18 08:10:38.411  INFO 3436 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:09:08 IST 2017]; root of context hierarchy
+2017-08-18 08:10:38.413  INFO 3436 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-08-18 08:10:50.201  INFO 816 --- [main] i.s.c.a.CompaignClinetApplication        : Starting CompaignClinetApplication on user with PID 816 (D:\springsuit\CompainClinet\target\classes started by lenovo in D:\springsuit\CompainClinet)
+2017-08-18 08:10:50.204 DEBUG 816 --- [main] i.s.c.a.CompaignClinetApplication        : Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2017-08-18 08:10:50.204  INFO 816 --- [main] i.s.c.a.CompaignClinetApplication        : No active profile set, falling back to default profiles: default
+2017-08-18 08:10:50.255  INFO 816 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:10:50 IST 2017]; root of context hierarchy
+2017-08-18 08:10:50.809  INFO 816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-08-18 08:10:51.422  INFO 816 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-08-18 08:10:51.431  INFO 816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-18 08:10:51.431  INFO 816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-08-18 08:10:51.523  INFO 816 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-18 08:10:51.666  INFO 816 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-18 08:10:51.670  INFO 816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-18 08:10:51.671  INFO 816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-18 08:10:51.671  INFO 816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-18 08:10:51.671  INFO 816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-18 08:10:51.816  INFO 816 --- [main] org.elasticsearch.plugins                : [Aragorn] modules [], plugins [], sites []
+2017-08-18 08:10:52.802 DEBUG 816 --- [main] i.s.campaign.service.CampaignService     : campaign :
+2017-08-18 08:10:52.803 DEBUG 816 --- [main] i.s.campaign.service.CampaignService     : Saved Camp :it.sella.campaign.entities.Campaign@761956ac
+2017-08-18 08:10:52.832 DEBUG 816 --- [main] i.s.campaign.service.CampaignService     : getAllCampaign :4
+2017-08-18 08:10:53.443  INFO 816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-18 08:10:53.482  INFO 816 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-08-18 08:10:53.487  INFO 816 --- [main] i.s.c.a.CompaignClinetApplication        : Started CompaignClinetApplication in 3.505 seconds (JVM running for 4.063)
+2017-08-18 08:11:04.242  INFO 816 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-08-18 08:11:04.242  INFO 816 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:10:50 IST 2017]; root of context hierarchy
+2017-08-18 08:11:04.244  INFO 816 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-08-18 08:19:14.442  INFO 9400 --- [main] i.s.c.a.CompaignClinetApplication        : Starting CompaignClinetApplication on user with PID 9400 (D:\springsuit\CompainClinet\target\classes started by lenovo in D:\springsuit\CompainClinet)
+2017-08-18 08:19:14.445 DEBUG 9400 --- [main] i.s.c.a.CompaignClinetApplication        : Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2017-08-18 08:19:14.445  INFO 9400 --- [main] i.s.c.a.CompaignClinetApplication        : No active profile set, falling back to default profiles: default
+2017-08-18 08:19:14.505  INFO 9400 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:19:14 IST 2017]; root of context hierarchy
+2017-08-18 08:19:15.071  INFO 9400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-08-18 08:19:15.662  INFO 9400 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-08-18 08:19:15.670  INFO 9400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-18 08:19:15.671  INFO 9400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.16
+2017-08-18 08:19:15.759  INFO 9400 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-18 08:19:15.904  INFO 9400 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-18 08:19:15.908  INFO 9400 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-18 08:19:15.909  INFO 9400 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-18 08:19:15.909  INFO 9400 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-18 08:19:15.909  INFO 9400 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-18 08:19:16.035  INFO 9400 --- [main] org.elasticsearch.plugins                : [Mr. M] modules [], plugins [], sites []
+2017-08-18 08:19:17.106 DEBUG 9400 --- [main] i.s.campaign.service.CampaignService     : campaign :
+2017-08-18 08:19:17.107 DEBUG 9400 --- [main] i.s.campaign.service.CampaignService     : Saved Camp :it.sella.campaign.entities.Campaign@6c9320c2
+2017-08-18 08:19:17.135 DEBUG 9400 --- [main] i.s.campaign.service.CampaignService     : getAllCampaign :6
+2017-08-18 08:19:17.719  INFO 9400 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-18 08:19:17.757  INFO 9400 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-08-18 08:19:17.762  INFO 9400 --- [main] i.s.c.a.CompaignClinetApplication        : Started CompaignClinetApplication in 3.542 seconds (JVM running for 4.055)
+2017-08-18 08:19:54.491  INFO 9400 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-08-18 08:19:54.492  INFO 9400 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@157632c9: startup date [Fri Aug 18 08:19:14 IST 2017]; root of context hierarchy
+2017-08-18 08:19:54.493  INFO 9400 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

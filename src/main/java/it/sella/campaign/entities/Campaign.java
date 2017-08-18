@@ -3,7 +3,7 @@ package it.sella.campaign.entities;
 import java.util.List;
 
 public class Campaign {
-	private Integer id;
+	private Long id;
 	private String description;
 	private String name;
 	private String priority;
@@ -14,7 +14,7 @@ public class Campaign {
 	private List<String> stream;
 	private List<String> group;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 	
@@ -39,7 +39,7 @@ public class Campaign {
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getDescription() {
