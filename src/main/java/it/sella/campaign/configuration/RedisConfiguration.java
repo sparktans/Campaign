@@ -1,4 +1,4 @@
-package it.sella.compain.configuration;
+package it.sella.campaign.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-import it.sella.compain.entities.Campaign;
+import it.sella.campaign.entities.Campaign;
 
 @Configuration
 

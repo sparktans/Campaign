@@ -1,4 +1,4 @@
-package it.sella.compain.repository.redis;
+package it.sella.campaign.repository.redis;
 
 import java.io.Serializable;
 

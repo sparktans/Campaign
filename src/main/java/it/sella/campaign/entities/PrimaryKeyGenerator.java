@@ -1,12 +1,8 @@
-package it.sella.compain.entities;
+package it.sella.campaign.entities;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "campaign", type = "PrimaryKeyGenerator", shards = 1, replicas = 0)
 public class PrimaryKeyGenerator {
 
-	@Id
 	private String entityName;
 	private Integer sequence;
 	

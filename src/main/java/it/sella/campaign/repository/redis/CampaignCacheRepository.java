@@ -1,4 +1,4 @@
-package it.sella.compain.repository.redis;
+package it.sella.campaign.repository.redis;
 
 
 import java.io.Serializable;
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import it.sella.compain.entities.Campaign;
+import it.sella.campaign.entities.Campaign;
 
 @Component
 @Qualifier("campaign")

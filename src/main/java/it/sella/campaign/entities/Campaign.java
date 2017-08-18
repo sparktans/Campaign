@@ -1,23 +1,44 @@
-package it.sella.compain.entities;
+package it.sella.campaign.entities;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-@Document(indexName = "campaign", type = "campaignentity", shards = 1, replicas = 0)
 public class Campaign {
-	@Id
 	private Integer id;
 	private String description;
 	private String name;
 	private String priority;
 	private String startDate;
 	private String endDate;
+	private String createdUser;
+	private String createdDate;
 	private List<String> stream;
 	private List<String> group;
+	
 	public Integer getId() {
 		return id;
 	}
+	
+	
+	public String getCreatedUser() {
+		return createdUser;
+	}
+
+
+	public void setCreatedUser(String createdUser) {
+		this.createdUser = createdUser;
+	}
+
+
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
