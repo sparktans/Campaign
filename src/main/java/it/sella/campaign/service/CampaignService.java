@@ -1,7 +1,10 @@
 package it.sella.campaign.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 
@@ -10,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import it.sella.campaign.entities.Campaign;
 import it.sella.campaign.entities.PrimaryKeyGenerator;
@@ -28,10 +32,12 @@ private ICampaignRepository campaignRepository;
 @Autowired
 private IPrimaryKeyRepository primaryKeyRepository;
 
+
 @Autowired
 @Qualifier("campaign")
 private IRedisCacheRepository<Campaign> cacheRepository;
 
+@Transactional
 public Campaign saveCampaign(Campaign campaign) {
 	PrimaryKeyGenerator generator = primaryKeyRepository.getPrimaryKeyGenerator("CampaignEntity");
 	if(generator == null) {
@@ -45,7 +51,6 @@ public Campaign saveCampaign(Campaign campaign) {
 	campaignRepository.save(String.valueOf(campaign.getId()),campaign);
 	primaryKeyRepository.saveOrUpdate(generator.getEntityName(), generator);
 	cacheRepository.putCache(campaign);
-	getCampaignByName(campaign.getId());
 	return campaign;
 }
 
@@ -55,23 +60,51 @@ public Campaign getCampaignByName(Long key) {
 	return campaign;
 }
 
+
+public List<Campaign> getCampaignByUser(String user) {
+	return campaignRepository.getCampaignByUser(user);
+}
+
 @Override
 public List<Campaign> getAllCampaign() {
 	return campaignRepository.getAllCampaign();
 }
 
+
+public Collection<String> getStream(String searchStream) {
+	Collection<String> repositoryStream = campaignRepository.getStreams();
+	Collection<String> returnColl = new HashSet<>();
+	Optional.ofNullable(repositoryStream).ifPresent(streamItr -> streamItr.forEach(singeStream -> {if(singeStream.toLowerCase().contains(searchStream.toLowerCase())){returnColl.add(singeStream);};}));
+	return returnColl;
+}
+
 @PostConstruct
 public void addAndSearchCampaign() {
-	Campaign camp=new Campaign();
+//	System.out.println(getStream("ava"));
+	/*Campaign camp=new Campaign();
 	camp.setName("testing3");
+	camp.setStatus(CampaignStatus.CREATE);
 	camp.setDescription("updateServiceName");
 	List<String> listStream = new ArrayList<>();
 	listStream.add("Java");
 	listStream.add("Java enterprice");
 	camp.setStream(listStream);
+	camp.setCreatedUser("GBS02097");
 	saveCampaign(camp);
-	slf4jLogger.debug("Saved Camp :"+camp);
-	slf4jLogger.debug("getAllCampaign :"+getAllCampaign().size());
+	Campaign camp2=new Campaign();
+	camp2.setName("testing3");
+	camp2.setDescription("updateServiceName");
+	List<String> listStreams = new ArrayList<>();
+	listStreams.add("DSN Java");
+	listStreams.add("Java enterprice");
+	camp2.setStream(listStreams);
+	camp2.setCreatedUser("GBS02097");
+	camp2.setStatus(CampaignStatus.CREATE);
+	saveCampaign(camp2);
+	slf4jLogger.debug("Saved Camp :"+camp2);
+	slf4jLogger.debug("getAllCampaign :"+getCampaignByUser("GBS02097"));
+	 List<Campaign> allCampaignByUser=	getCampaignByUser("GBS02096");
+	 allCampaignByUser.forEach(campaign->slf4jLogger.debug(campaign.toString()));*/
 //	Campaign camp1=repository.findByName("test");
 	//getCampaignByName(camp.getId());
 //	System.out.println("camp search >>>>>>>>"+camp1);

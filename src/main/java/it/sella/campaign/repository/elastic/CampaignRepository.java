@@ -1,17 +1,23 @@
 package it.sella.campaign.repository.elastic;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+
 
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import it.sella.campaign.CampaignException;
 import it.sella.campaign.entities.Campaign;
@@ -32,6 +38,7 @@ public class CampaignRepository extends ElasticRepository implements ICampaignRe
 		}
 		super.update(id, object);
 	}
+	
 
 	@Override
 	public String getType() {
@@ -43,12 +50,37 @@ public class CampaignRepository extends ElasticRepository implements ICampaignRe
 		List<Campaign> campaignCollection = new ArrayList<>();
 		SearchResponse requestBuilder = getClient().prepareSearch(getIndex())
 				.setTypes(getType())
-				.setQuery(QueryBuilders.matchAllQuery()).execute().actionGet();
+				.setQuery(QueryBuilders.matchAllQuery()).setSize(1000).execute().actionGet();
 		SearchHits searchHits=requestBuilder.getHits();
 		SearchHit[] hits=searchHits.getHits();
 		List<SearchHit> listOfHit = hits != null ? Arrays.asList(hits) : new ArrayList<>();
 		listOfHit.forEach(hit -> campaignCollection.add(new Gson().fromJson(hit.getSourceAsString(), Campaign.class)) );
 		return campaignCollection;
+	}
+
+	@Override
+	public List<Campaign> getCampaignByUser(String user) {
+		List<Campaign> campaignCollection = new ArrayList<>();
+		SearchResponse requestBuilder = getClient().prepareSearch(getIndex())
+				.setTypes(getType()).setQuery(QueryBuilders.commonTermsQuery("createdUser", user)).setSize(1000).execute().actionGet();
+		SearchHits searchHits=requestBuilder.getHits();
+		SearchHit[] hits=searchHits.getHits();
+		List<SearchHit> listOfHit = hits != null ? Arrays.asList(hits) : new ArrayList<>();
+		listOfHit.forEach(hit -> {campaignCollection.add(new Gson().fromJson(hit.getSourceAsString(), Campaign.class));});
+		return campaignCollection;
+	}
+	
+	public Collection<String> getStreams() {
+		Collection<String> arrayList = new HashSet<>();
+		SearchResponse requestBuilder = getClient().prepareSearch(getIndex())
+				.setTypes(getType()).setSearchType(SearchType.QUERY_AND_FETCH).setFetchSource(new String[]{"stream"}, null).setSize(1000).execute().actionGet();
+		SearchHits searchHits=requestBuilder.getHits();
+		SearchHit[] hits=searchHits.getHits();
+		List<SearchHit> listOfHit = hits != null ? Arrays.asList(hits) : new ArrayList<>();
+		listOfHit.forEach(hit -> {
+			arrayList.addAll(new Gson().fromJson(hit.getSourceAsString(),  Campaign.class).getStream());} );
+	//	listOfHit.forEach(hit -> System.out.println(hit.getSourceAsString()) );
+		return arrayList;
 	}
 
 

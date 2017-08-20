@@ -2,6 +2,11 @@ package it.sella.campaign.entities;
 
 import java.util.List;
 
+
+import com.google.gson.Gson;
+
+import it.sella.campaign.constants.CampaignStatus;
+
 public class Campaign {
 	private Long id;
 	private String description;
@@ -11,13 +16,13 @@ public class Campaign {
 	private String endDate;
 	private String createdUser;
 	private String createdDate;
+	private CampaignStatus status;
 	private List<String> stream;
 	private List<String> group;
 	
 	public Long getId() {
 		return id;
 	}
-	
 	
 	public String getCreatedUser() {
 		return createdUser;
@@ -84,5 +89,19 @@ public class Campaign {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public CampaignStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(CampaignStatus status) {
+		this.status = status;
+	}
+	
+	@Override
+	public String toString() {
+	 return new Gson().toJson(this);
+	}
+	
 	
 }
