@@ -1,6 +1,5 @@
 package it.sella.campaign.repository.elastic;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,7 +16,6 @@ import org.elasticsearch.search.SearchHits;
 import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import it.sella.campaign.CampaignException;
 import it.sella.campaign.entities.Campaign;
