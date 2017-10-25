@@ -54,15 +54,18 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>campaign-interfaces</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>campaign-controller</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>campaign-persistence</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>jstl</artifactId> 
 			<version>1.2</version> </dependency> -->

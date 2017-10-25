@@ -8,11 +8,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>campaign-interface</artifactId>
+	<artifactId>campaign-interfaces</artifactId>
 
 	<packaging>jar</packaging>
 
-	<name>campaign-interface</name>
+	<name>campaign-interfaces</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
