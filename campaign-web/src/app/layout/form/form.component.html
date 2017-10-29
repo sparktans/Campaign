@@ -1,0 +1,64 @@
+
+<div [@routerTransition]>
+  <!--<app-page-header [heading]="'Forms'" [icon]="'fa-edit'"></app-page-header>-->
+
+  
+ 
+    <form [formGroup]="rForm"  (ngSubmit)="addPost(rForm.value)">
+          <fieldset class="form-group">
+              <label>TITLE</label>
+              <input class="form-control" formControlName="name" >
+          </fieldset>
+          <fieldset class="form-group">
+              <label>Description</label>
+              <input class="form-control" formControlName="description" >
+          </fieldset>    
+           <fieldset class="form-group">
+              <label>Stream</label>
+              <select class="form-control" >
+                  <option *ngFor="let group of groups" [value]="group.id" >{{group.title}}</option>
+              </select>
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Group</label>
+              <select class="form-control" name="group" >
+                  <option *ngFor="let group of groups" [value]="group.id" >{{group.title}}</option>
+              </select>
+             
+          </fieldset>
+          <fieldset class="form-group">
+                    <label>Priority</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">Low
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Medium
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">High
+                    </label>
+          </fieldset>-->
+     
+           <!-- <fieldset class="form-group">
+              <label>Start Date</label><input class="form-control">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp11" [(ngModel)]="model" ngbDatepicker #d11="ngbDatepicker">
+                            <div class="input-group-addon" (click)="d11.toggle()" >
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+          </fieldset>
+                    <fieldset class="form-group">
+              <label>Start Date</label><input class="form-control">
+          </fieldset>
+            <fieldset class="form-group">
+              <label>End Date</label><input class="form-control">
+          </fieldset>-->
+         <button type="submit" class="btn btn-secondary" >Submit </button>
+          <button type="reset" class="btn btn-secondary">Reset </button>
+
+    </form>
+  
+
+ <!-- /.row -->
+</div>
