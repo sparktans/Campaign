@@ -15,7 +15,7 @@ import it.sella.campaign.entities.Campaign;
 public class CampaignCacheRepository extends RedisRepository<Campaign> {
 	
 
-	@Autowired
+	@Autowired(required=false)
 	@Qualifier("campaignRedisTemplate")
 	private RedisTemplate<String,Object> redisTemplate;
 	

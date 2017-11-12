@@ -1,13 +1,9 @@
 package it.sella.campaign.entities;
 
-import java.util.List;
-
-
-import com.google.gson.Gson;
 
 import it.sella.campaign.constants.CampaignStatus;
 
-public class Campaign {
+public class CampaignVO {
 	private Long id;
 	private String description;
 	private String name;
@@ -17,33 +13,11 @@ public class Campaign {
 	private String createdUser;
 	private String createdDate;
 	private CampaignStatus status;
-	private List<String> stream;
-	private List<String> group;
-	
+	private String stream;
+	private String group;
 	public Long getId() {
 		return id;
 	}
-	
-	public String getCreatedUser() {
-		return createdUser;
-	}
-
-
-	public void setCreatedUser(String createdUser) {
-		this.createdUser = createdUser;
-	}
-
-
-	public String getCreatedDate() {
-		return createdDate;
-	}
-
-
-	public void setCreatedDate(String createdDate) {
-		this.createdDate = createdDate;
-	}
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -52,6 +26,12 @@ public class Campaign {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPriority() {
 		return priority;
@@ -71,37 +51,34 @@ public class Campaign {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	public List<String> getStream() {
-		return stream;
+	public String getCreatedUser() {
+		return createdUser;
 	}
-	public void setStream(List<String> stream) {
-		this.stream = stream;
+	public void setCreatedUser(String createdUser) {
+		this.createdUser = createdUser;
 	}
-	public List<String> getGroup() {
-		return group;
+	public String getCreatedDate() {
+		return createdDate;
 	}
-	public void setGroup(List<String> group) {
-		this.group = group;
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public CampaignStatus getStatus() {
 		return status;
 	}
-
 	public void setStatus(CampaignStatus status) {
 		this.status = status;
 	}
-	
-	@Override
-	public String toString() {
-	 return new Gson().toJson(this);
+	public String getStream() {
+		return stream;
 	}
-	
-	
+	public void setStream(String stream) {
+		this.stream = stream;
+	}
+	public String getGroup() {
+		return group;
+	}
+	public void setGroup(String group) {
+		this.group = group;
+	}
 }

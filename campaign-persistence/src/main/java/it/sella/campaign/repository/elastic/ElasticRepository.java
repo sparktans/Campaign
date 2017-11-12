@@ -13,7 +13,7 @@ import it.sella.campaign.CampaignException;
 
 public abstract class ElasticRepository {
 	
-	@Autowired
+	@Autowired(required=false)
 	private Client elasticClient;
 	
 	public void save(String id,Object object) {

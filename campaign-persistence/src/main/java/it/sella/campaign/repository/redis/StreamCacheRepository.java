@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class StreamCacheRepository extends RedisRepository<Collection<String>>{
 
 	
-	@Autowired
+	@Autowired(required=false)
 	@Qualifier("streamRedisTemplate")
 	private RedisTemplate<String,Object> redisTemplate;
 	

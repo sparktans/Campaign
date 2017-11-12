@@ -5,6 +5,10 @@ public class UserGroup {
 	private Long idGroup;
 	private String groupName;
 	
+	public UserGroup(Long idGroup,String groupName) {
+		this.idGroup=idGroup;
+		this.groupName = groupName;
+	}
 	public Long getIdGroup() {
 		return idGroup;
 	}

@@ -32,21 +32,10 @@ public class ElasticSearchConfiguration {
       TransportClient client = TransportClient.builder().settings(esSettings).build();
          TransportAddress address = new InetSocketTransportAddress(InetAddress.getByName(environment.getProperty("elasticsearch.host")), Integer.parseInt(environment.getProperty("elasticsearch.port")));
         client.addTransportAddress(address);
-        String val = null;
-       
+            
         return client;
     }
-    
-    static boolean isPresent(String val) {
-    	 return Optional.ofNullable(Optional.ofNullable(val).orElse("")).filter(x -> x.equalsIgnoreCase("null") || x.trim().length() == 0).isPresent();
-    }
-    public static void main(String[] args) {
-		System.out.println(isPresent(null));
-		System.out.println(isPresent("NULL"));
-		System.out.println(isPresent("null"));
-		System.out.println(isPresent(" "));
-		System.out.println(isPresent("a"));
-	}
+
 
   
 }

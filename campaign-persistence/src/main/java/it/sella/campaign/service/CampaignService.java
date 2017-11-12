@@ -1,5 +1,6 @@
 package it.sella.campaign.service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -11,32 +12,36 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.sella.campaign.entities.Campaign;
 import it.sella.campaign.entities.PrimaryKeyGenerator;
+import it.sella.campaign.entities.Stream;
+import it.sella.campaign.entities.UserGroup;
 import it.sella.campaign.repository.elastic.ICampaignRepository;
 import it.sella.campaign.repository.elastic.IPrimaryKeyRepository;
 import it.sella.campaign.repository.redis.IRedisCacheRepository;
 import it.sella.campaign.repository.redis.RedisRepository;
 
-@Component
+@Service
 public class CampaignService implements ICampaignService{
 	
 private final Logger slf4jLogger = LoggerFactory.getLogger(CampaignService.class);
 	 
-@Autowired
+@Autowired(required=false)
 private ICampaignRepository campaignRepository;
 
-@Autowired
+@Autowired(required=false)
 private IPrimaryKeyRepository primaryKeyRepository;
 
-@Autowired
+@Autowired(required=false)
 @Qualifier("stream")
 private RedisRepository<Collection<String>> streamCacheRepository;
 
-@Autowired
+@Autowired(required=false)
 @Qualifier("campaign")
 private IRedisCacheRepository<Campaign> cacheRepository;
 
@@ -127,6 +132,31 @@ public void modifyCampaign(Campaign campaign) {
 	 campaignRepository.update(campaign.getId() == null ? "-1" :String.valueOf(campaign.getId()) , campaign);
 }
 
+
+@Bean
+CampaignService bookingService() {
+  return new CampaignService();
+}
+
+@Override
+public Collection<Stream> getAllStream() {
+	Collection<String> repositoryStream = streamCacheRepository.getCache("StreamCollection");
+	final Collection<Stream> coll = new ArrayList<>();
+	if(repositoryStream == null) {
+		 repositoryStream = campaignRepository.getStreams();	
+		 streamCacheRepository.putCache(repositoryStream);
+	}
+	Optional.ofNullable(repositoryStream).ifPresent(streamItr -> streamItr.forEach(singeStream -> coll.add(new Stream(singeStream))));
+	return coll;
+}
+
+@Override
+public Collection<UserGroup> getAllGroup() {
+	final Collection<UserGroup> coll = new ArrayList<>();
+	coll.add(new UserGroup(1l,"Base system"));
+	coll.add(new UserGroup(1l,"Titoli"));
+	return coll;
+}
 
 	
 }
